@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class ProductsItem implements Serializable {
+public class Product implements Serializable {
 
 	@SerializedName("price_final_text")
 	private String priceFinalText;

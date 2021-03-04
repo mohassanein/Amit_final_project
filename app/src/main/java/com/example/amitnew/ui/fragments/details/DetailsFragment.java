@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +14,11 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.amitnew.R;
-import com.example.amitnew.data.model.product.ProductsItem;
+import com.example.amitnew.data.model.product.Product;
 
 public class DetailsFragment extends Fragment {
 
-    ProductsItem product;
+    Product product;
     ImageView image_details;
     TextView  item_details,title_details,price_final,product_count,desc_details;
 
@@ -31,7 +30,7 @@ public class DetailsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(getArguments()!=null){
-            product = (ProductsItem) getArguments().getSerializable("product");
+            product = (Product) getArguments().getSerializable("product");
 
         }
     }

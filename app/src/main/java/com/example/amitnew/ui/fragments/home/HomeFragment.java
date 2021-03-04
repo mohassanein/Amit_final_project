@@ -17,19 +17,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.amitnew.data.model.AddCartResponse;
-import com.example.amitnew.data.model.product.ProductsItem;
-import com.example.amitnew.data.source.api.ApiManager;
+import com.example.amitnew.data.model.product.Product;
 import com.example.amitnew.helper.TokenManager;
 import com.example.amitnew.ui.adapter.product.ProductAdapter;
 import com.example.amitnew.R;
 import com.example.amitnew.ui.adapter.product.ProductClickListener;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class HomeFragment extends Fragment implements ProductClickListener {
@@ -74,10 +68,10 @@ public class HomeFragment extends Fragment implements ProductClickListener {
             initRecycler(view);
             homeViewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
             homeViewModel.getProducts();
-            homeViewModel.getProductsLiveData().observe(getViewLifecycleOwner(), new Observer<List<ProductsItem>>() {
+            homeViewModel.getProductsLiveData().observe(getViewLifecycleOwner(), new Observer<List<Product>>() {
                 @Override
-                public void onChanged(List<ProductsItem> productsItems) {
-                    adapter.setProductsItemList(productsItems);
+                public void onChanged(List<Product> products) {
+                    adapter.setProductList(products);
                 }
             });
 
@@ -116,7 +110,7 @@ public class HomeFragment extends Fragment implements ProductClickListener {
 
 
     @Override
-    public void showProductDetails(ProductsItem product) {
+    public void showProductDetails(Product product) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("product",product);
     navController.navigate(R.id.action_homeFragment_to_detailsFragment,bundle);
@@ -124,7 +118,7 @@ public class HomeFragment extends Fragment implements ProductClickListener {
     }
 
     @Override
-    public void addProductsToCart(ProductsItem product) {
+    public void addProductsToCart(Product product) {
     TokenManager tokenManager = new TokenManager(getContext());
     String token =   tokenManager.getToken();
 

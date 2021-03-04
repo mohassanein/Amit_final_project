@@ -1,6 +1,7 @@
 package com.example.amitnew.data.source.api;
 
 import com.example.amitnew.data.model.AddCartResponse;
+import com.example.amitnew.data.model.cart.CartResponse;
 import com.example.amitnew.data.model.category.CategoryResponse;
 import com.example.amitnew.data.model.product.ProudctsResponse;
 
@@ -23,6 +24,10 @@ public interface ProductService {
 
     @PUT("api/user/products/{id}")
     Call<AddCartResponse>AddProductToCart(@Path("id") int id, @Header("Authorization") String token, @Query("amount") int amount);
+
+    @GET("api/user/products")
+    Call<CartResponse>CartProducts(@Header("Authorization") String token);
+
 
 
 }

@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.amitnew.data.model.AddCartResponse;
-import com.example.amitnew.data.model.product.ProductsItem;
+import com.example.amitnew.data.model.product.Product;
 import com.example.amitnew.data.reprository.ProductReprository;
 import com.example.amitnew.data.source.api.ApiManager;
 
@@ -17,10 +17,10 @@ import retrofit2.Response;
 
 public class HomeViewModel  extends ViewModel {
 
-    private LiveData<List<ProductsItem>> productsLiveData ;
+    private LiveData<List<Product>> productsLiveData ;
     private LiveData<String> messageLiveData ;
 
-    public LiveData<List<ProductsItem>> getProductsLiveData() {
+    public LiveData<List<Product>> getProductsLiveData() {
         return productsLiveData;
     }
 

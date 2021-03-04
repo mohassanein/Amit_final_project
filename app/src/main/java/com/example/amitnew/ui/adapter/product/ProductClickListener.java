@@ -1,8 +1,8 @@
 package com.example.amitnew.ui.adapter.product;
 
-import com.example.amitnew.data.model.product.ProductsItem;
+import com.example.amitnew.data.model.product.Product;
 
 public interface ProductClickListener {
-    void showProductDetails(ProductsItem product);
-    void addProductsToCart(ProductsItem product);
+    void showProductDetails(Product product);
+    void addProductsToCart(Product product);
 }

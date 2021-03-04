@@ -2,7 +2,7 @@ package com.example.amitnew.data.reprository;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.amitnew.data.model.product.ProductsItem;
+import com.example.amitnew.data.model.product.Product;
 import com.example.amitnew.data.model.product.ProudctsResponse;
 import com.example.amitnew.data.source.api.ApiManager;
 
@@ -13,7 +13,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ProductReprository {
-    private MutableLiveData<List<ProductsItem>>productsLiveData;
+    private MutableLiveData<List<Product>>productsLiveData;
     private MutableLiveData<String>messageLiveData;
 
     public ProductReprository() {
@@ -21,7 +21,7 @@ public class ProductReprository {
         messageLiveData = new MutableLiveData<>();
     }
 
-    public MutableLiveData<List<ProductsItem>> getProductsLiveData() {
+    public MutableLiveData<List<Product>> getProductsLiveData() {
         return productsLiveData;
     }
 
