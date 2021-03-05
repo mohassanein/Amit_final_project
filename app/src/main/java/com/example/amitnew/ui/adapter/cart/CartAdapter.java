@@ -1,6 +1,7 @@
 package com.example.amitnew.ui.adapter.cart;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.CartHolder>{
 
     public void setProductsItems(List<ProductsItem> productsItems) {
         this.productsItems = productsItems;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -47,6 +49,10 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             if(productsItem!=null){
                 Glide.with(context).load(productsItem.getProduct().getAvatar()).into(holder.cartImage);
                 holder.cartname.setText(productsItem.getProduct().getName());
+                holder.cartdesc.setText(productsItem.getProduct().getDescription());
+                holder.cartprice.setText(productsItem.getTotal()+""+productsItem.getProduct().getCurrency());
+                holder.cartcount.setText(productsItem.getAmount());
+
 
 
             }

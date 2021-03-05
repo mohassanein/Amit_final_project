@@ -9,7 +9,7 @@ public class ProductsItem{
 	private int amount;
 
 	@SerializedName("total")
-	private int total;
+	private double total;
 
 	@SerializedName("product")
 	private Product product;
@@ -21,7 +21,7 @@ public class ProductsItem{
 		return amount;
 	}
 
-	public int getTotal(){
+	public double getTotal(){
 		return total;
 	}
 

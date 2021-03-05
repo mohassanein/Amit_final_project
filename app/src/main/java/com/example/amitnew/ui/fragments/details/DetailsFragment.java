@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.amitnew.R;
+import com.example.amitnew.data.model.cart.ProductsItem;
 import com.example.amitnew.data.model.product.Product;
 
 public class DetailsFragment extends Fragment {
@@ -56,7 +57,7 @@ public class DetailsFragment extends Fragment {
         item_details.setText(product.getName());
         title_details.setText(product.getTitle());
         price_final.setText(String.valueOf(product.getPriceFinal()));
-       // product_count.setText(product.getInStock());
+
         desc_details.setText(product.getDescription());
 
     }

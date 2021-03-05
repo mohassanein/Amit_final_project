@@ -1,5 +1,7 @@
 package com.example.amitnew.data.reprository;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.amitnew.data.model.AddCartResponse;
@@ -34,11 +36,16 @@ public class CartReprository {
 
     public void Cartproducts(String token){
 
-        ApiManager.getProductService().CartProducts(token).enqueue(new Callback<CartResponse>() {
+        ApiManager.getProductService().CartProducts("Bearer "+token).enqueue(new Callback<CartResponse>() {
             @Override
             public void onResponse(Call<CartResponse> call, Response<CartResponse> response) {
-                CartLiveData.setValue(response.body().getProducts());
+                if(response.isSuccessful())
+                    CartLiveData.setValue(response.body().getProducts());
+                else
+                    messageCartLiveData.setValue((response.message()));
+
             }
+
 
             @Override
             public void onFailure(Call<CartResponse> call, Throwable t) {
