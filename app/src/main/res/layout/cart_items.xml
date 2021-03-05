@@ -63,7 +63,7 @@
                     android:layout_margin="@dimen/_6sdp">
 
                     <TextView
-                        android:id="@+id/product_cart_price_final"
+                        android:id="@+id/cart_price_final"
                         android:layout_width="@dimen/_65sdp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/Red"
