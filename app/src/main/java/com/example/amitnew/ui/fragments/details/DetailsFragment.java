@@ -50,22 +50,25 @@ public class DetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        image_details = view.findViewById(R.id.image_details);
+       initRecycler(view);
         Glide.with(getContext()).load(product.getAvatar()).into(image_details);
-        item_details = view.findViewById(R.id.item_details);
-        title_details = view.findViewById(R.id.title_details);
-        price_final = view.findViewById(R.id.price_final);
-        product_count = view.findViewById(R.id.product_count);
-        desc_details = view.findViewById(R.id.desc_details);
         item_details.setText(product.getName());
         title_details.setText(product.getTitle());
         price_final.setText(String.valueOf(product.getPriceFinal()));
-
         desc_details.setText(product.getDescription());
 
     }
 
+protected  void  initRecycler(View view){
+    image_details = view.findViewById(R.id.image_details);
+    item_details = view.findViewById(R.id.item_details);
+    title_details = view.findViewById(R.id.title_details);
+    price_final = view.findViewById(R.id.price_final);
+    product_count = view.findViewById(R.id.product_count);
+    desc_details = view.findViewById(R.id.desc_details);
 
+
+}
 
 
 }
