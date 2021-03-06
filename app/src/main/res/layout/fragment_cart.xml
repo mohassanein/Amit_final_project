@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.cart.CartFragment"
-    android:background="@color/very_light_gray">
+    android:background="@color/white">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -26,9 +26,9 @@
 
         <Button
             android:id="@+id/Clear_Cart"
-            android:layout_width="@dimen/_140sdp"
+            android:layout_width="@dimen/_135sdp"
             android:layout_height="@dimen/_35sdp"
-            android:background="@drawable/btn_style"
+            android:background="@drawable/btn_with_border_style"
             android:text="@string/Clear_Cart"
             android:textAllCaps="false"
             android:textSize="@dimen/_15sdp"
@@ -37,7 +37,7 @@
 
         <Button
             android:id="@+id/Go_Checkout"
-            android:layout_width="@dimen/_150sdp"
+            android:layout_width="@dimen/_140sdp"
             android:layout_height="@dimen/_42sdp"
             android:background="@drawable/corner_shape_btn"
             android:layout_marginLeft="@dimen/_9sdp"

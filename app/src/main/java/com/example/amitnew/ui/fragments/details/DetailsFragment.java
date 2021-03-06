@@ -17,9 +17,12 @@ import com.example.amitnew.R;
 import com.example.amitnew.data.model.cart.ProductsItem;
 import com.example.amitnew.data.model.product.Product;
 
+import java.util.ArrayList;
+
 public class DetailsFragment extends Fragment {
 
     Product product;
+
     ImageView image_details;
     TextView  item_details,title_details,price_final,product_count,desc_details;
 

@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +26,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginScreen extends AppCompatActivity {
-EditText logmail,logpassword;
-TextView sign;
-Button log_in;
+    EditText logmail,logpassword;
+    TextView sign;
+    Button log_in;
     TokenManager tokenManager;
+    LinearLayout layout;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +62,8 @@ Button log_in;
         log_in = findViewById(R.id.login_btn);
         logmail = findViewById(R.id.mail_login);
         logpassword = findViewById(R.id.password_login);
+        layout = findViewById(R.id.parent_layout_login);
+        progressBar = findViewById(R.id.progress_bar);
         tokenManager = new TokenManager(this);
     }
 
@@ -70,6 +76,9 @@ Button log_in;
                     .show();
         } else {
 
+            progressBar.setVisibility(View.VISIBLE);
+            layout.setVisibility(View.GONE);
+
             Map<String, String> loged = new HashMap<>();
             loged.put("email", Email);
             loged.put("password", Pass);
@@ -79,6 +88,8 @@ Button log_in;
                 public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                     if(response.isSuccessful()) {
                         tokenManager.saveToken(response.body().getToken());
+                        progressBar.setVisibility(View.VISIBLE);
+                        layout.setVisibility(View.GONE);
                         Intent in = new Intent(LoginScreen.this, EcommerceAmit.class);
                         startActivity(in);
                         finish();
