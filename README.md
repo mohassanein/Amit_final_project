@@ -14,7 +14,7 @@
 - Profile Fragment
 - ![profile](https://user-images.githubusercontent.com/79084697/110377160-bd86b280-805c-11eb-8ba5-943e42a0b81c.jpeg)
 - Cart Fragment
-- ![Cart](https://user-images.githubusercontent.com/79084697/110377683-5fa69a80-805d-11eb-91e4-e34f01bd5ef6.jpeg)
+- ![Cart](https://user-images.githubusercontent.com/79084697/110378213-fbd0a180-805d-11eb-81ad-5d6a2d9e6463.jpeg)
 ### Used Technology
 - Retrofit library to Integrate with Api
 - Json library to convert from and to json format
