@@ -102,7 +102,7 @@ public class LoginScreen extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<UserResponse> call, Throwable t) {
-            Toast.makeText(LoginScreen.this,"Registration Failed",Toast.LENGTH_LONG)
+            Toast.makeText(LoginScreen.this,"Registration Failed Check Internet Connection",Toast.LENGTH_LONG)
                             .show();
                 }
             });
