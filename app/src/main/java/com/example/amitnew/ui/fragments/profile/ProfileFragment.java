@@ -42,7 +42,7 @@ public class ProfileFragment extends Fragment {
         log_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(getContext(), SignUpScreen.class);
+                Intent in = new Intent(getActivity(), SignUpScreen.class);
                 startActivity(in);
 
             }

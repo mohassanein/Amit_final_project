@@ -25,7 +25,7 @@
         android:background="@color/white">
 
         <Button
-            android:id="@+id/Clear_Cart"
+            android:id="@+id/clear_Cart"
             android:layout_width="@dimen/_135sdp"
             android:layout_height="@dimen/_35sdp"
             android:background="@drawable/btn_with_border_style"

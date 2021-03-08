@@ -70,7 +70,7 @@ public class DetailsFragment extends Fragment {
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Amount has been added to cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Product amount has been updated successfully", Toast.LENGTH_SHORT).show();
             }
         });
 

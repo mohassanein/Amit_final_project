@@ -86,20 +86,22 @@ public class LoginScreen extends AppCompatActivity {
             ApiManager.getUserService().UserLogin(loged).enqueue(new Callback<UserResponse>() {
                 @Override
                 public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                    if(response.isSuccessful()) {
+                    if (response.isSuccessful()) {
                         tokenManager.saveToken(response.body().getToken());
                         progressBar.setVisibility(View.VISIBLE);
                         layout.setVisibility(View.GONE);
                         Intent in = new Intent(LoginScreen.this, EcommerceAmit.class);
                         startActivity(in);
                         finish();
-                        Log.d("ddddd", "onResponse: "+ response.body().getToken());
+                        Log.d("ddddd", "onResponse: " + response.body().getToken());
+                    } else {
+                        Toast.makeText(LoginScreen.this, "Wrong email or password", Toast.LENGTH_LONG)
+                                .show();
+                        progressBar.setVisibility(View.INVISIBLE);
+                        layout.setVisibility(View.VISIBLE);
+                        Log.d("ddddd", "onResponse: " + response.code() + response.message());
                     }
-                    else Toast.makeText(LoginScreen.this,"Wrong email or password",Toast.LENGTH_LONG)
-                            .show();
-                    Log.d("ddddd", "onResponse: "+ response.code()+ response.message());
                 }
-
                 @Override
                 public void onFailure(Call<UserResponse> call, Throwable t) {
             Toast.makeText(LoginScreen.this,"Registration Failed Check Internet Connection",Toast.LENGTH_LONG)
