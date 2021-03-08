@@ -44,7 +44,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent in = new Intent(getActivity(), SignUpScreen.class);
                 startActivity(in);
-
+                getActivity().finishAffinity();
             }
         });
     }
